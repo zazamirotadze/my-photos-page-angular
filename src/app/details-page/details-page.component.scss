@@ -1,0 +1,34 @@
+@use '../../reUseablelStyles/color' as *;
+@use '../../reUseablelStyles/mixins' as *;
+
+.details{
+    text-align: center;
+    padding: 2rem;
+    & > div {
+        margin: 0 auto;
+        width: 90%;
+        height: 90vw;
+        max-width: 40rem;
+        max-height: 40rem;
+        padding: 1rem;
+        @include photoContainerMixin;
+        border: 15px  ridge  $color-green-dark ;
+        background-color: $color-gray-light;
+        & > img {
+            @include fullyDisplayedPhotoMixin;
+            @include smoothHoverAffect;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.5);
+            }
+        }
+    }
+    & > h2 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        color: $color-black;
+        @include respond(tab-port){
+            font-size: 2rem;
+        }
+    }
+}

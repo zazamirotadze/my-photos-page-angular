@@ -1,0 +1,12 @@
+<div class="photo-list">
+  @for (photo of currentPhotos(); track photo.id) {
+    <app-photo [photo] = 'photo' [route] = 'route.snapshot.queryParams'></app-photo>
+  }
+</div>
+<app-pagination 
+  [totalPosts] = "totalPosts()" 
+  [postsPerPage] = "postsPerPage" 
+  [currentPage] = "currentPage()">
+</app-pagination>
+
+

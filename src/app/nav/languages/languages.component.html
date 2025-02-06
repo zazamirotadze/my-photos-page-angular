@@ -1,0 +1,16 @@
+<div class='languagesMenu' #languagesMenu>
+    <div class='flags'>
+        <img 
+        (click)="this.outsideClick.toggleMenu()"
+        alt="flag icon" 
+        [src]="'http://purecatamphetamine.github.io/country-flag-icons/3x2/' 
+        + (this.route.snapshot.queryParams['language'] === 'en' ? 'GB' : 'GE') + '.svg'" 
+        />
+        <span (click)="this.outsideClick.toggleMenu()">&#x2193;</span>
+    </div>
+    <div class='languages' [class.open]="outsideClick.menuOpen" >
+        @for (photoLanguage of photosData.getLanguages(); track photoLanguage.languageCode) {
+            <a (click)="this.outsideClick.toggleMenu()" [routerLink]="[]" [queryParams]="{ language: photoLanguage.languageCode }" queryParamsHandling="merge">{{ photoLanguage.languageName }}</a>
+        }
+    </div>
+</div>

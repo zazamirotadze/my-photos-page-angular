@@ -1,0 +1,25 @@
+@use '../../../reUseablelStyles/color' as *;
+@use '../../../reUseablelStyles/mixins' as *;
+
+.pagination-list{
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap:  10px;
+    margin: 0 auto;
+    & > a {
+        @include smoothHoverAffect;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 5px;
+        border:  1px solid $color-gray-medium;
+        color: $color-black;
+        &:hover, &:active{
+            @include activeItem
+        }
+    }
+}
+
+.pagination-selectedBtn{
+    @include activeItem;
+}  

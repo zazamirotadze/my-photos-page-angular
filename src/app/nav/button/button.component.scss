@@ -1,0 +1,22 @@
+@use '../../../reUseablelStyles/color' as *;
+@use '../../../reUseablelStyles/mixins' as *;
+
+
+.button{
+    font-size: clamp(16px, 2vw, 24px);
+    text-align: center;
+    padding: 1vw;
+    border-radius: 5px;
+    background-color: $color-gray-medium;
+    color: $color-black;
+    display: table;
+    cursor: pointer;
+    @include smoothHoverAffect;
+    &:hover, &:active{
+        @include activeItem;
+    }
+}
+
+.selectedBtn{
+    @include activeItem;
+}  

@@ -1,0 +1,9 @@
+<div class="menu" #menu>
+  <button class="burger-menu" [class.open]="outsideClick.menuOpen" (click)="this.outsideClick.toggleMenu(600)">☰</button>
+
+  <div class="buttons" [class.open]="outsideClick.menuOpen">
+    @for (categoryName of photosData.getCategoriesNames(); track categoryName.name) {
+      <app-button (click)="this.outsideClick.toggleMenu(600)" [categoryName]="categoryName"></app-button>
+    }
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<a  [class]="route.snapshot.queryParams['categoryName'] === categoryName?.name ? 'button selectedBtn' : 'button'" 
+    [routerLink]="['/']" 
+    [queryParams]="route.snapshot.queryParams['language'] ? 
+    { categoryName: categoryName?.name, page: 1, language: route.snapshot.queryParams['language']} : 
+    { categoryName: categoryName?.name, page: 1}"  
+>
+    {{ route.snapshot.queryParams['language'] === 'en'? categoryName?.name : categoryName?.nameGeo }}
+</a>

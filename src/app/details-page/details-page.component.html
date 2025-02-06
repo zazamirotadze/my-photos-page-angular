@@ -1,0 +1,8 @@
+<div class="details">
+    <h2>
+        {{ selectedPhoto() ? (route.snapshot.queryParams['language'] === 'en' ? selectedPhoto()?.name : selectedPhoto()?.nameGeo) : '' }}
+    </h2>
+    <div>
+        <img [src]="selectedPhoto()?.url" alt="image" />
+    </div>
+</div>

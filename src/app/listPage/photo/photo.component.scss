@@ -1,0 +1,31 @@
+@use '../../../reUseablelStyles/color' as *;
+@use '../../../reUseablelStyles/mixins' as *;
+
+.photo{
+    width: 19rem;
+    height: 25rem;
+    max-width: 400px;
+    border: 1px solid $color-gray-light;
+    background-color: $color-gray-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @include smoothHoverAffect;
+    & :active, &:hover{
+       @include activeItem;
+    }
+    & > div{
+        width: 100%;
+        height: 90%;
+        @include photoContainerMixin;
+        & > img{
+            @include fullyDisplayedPhotoMixin;
+        }
+    }
+    & > p {
+        font-size: 1rem;
+        color: $color-gray-dark;
+        text-align: center;
+    }
+}
+

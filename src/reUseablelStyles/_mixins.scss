@@ -1,0 +1,43 @@
+@use './color' as *;
+
+@mixin fullyDisplayedPhotoMixin {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@mixin  photoContainerMixin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@mixin  activeItem{
+    background-color: $color-gray-light;
+    box-shadow: rgba($color-black, 0.25) 0px 50px 100px -20px, rgba($color-black, 0.3) 0px 30px 60px -30px, rgba($color-black, 0.35) 0px -2px 6px 0px inset;
+}
+
+@mixin smoothHoverAffect {
+    transition: all 0.3s ease-in-out;
+}
+
+
+@mixin respond($breakpoint){
+    @if $breakpoint == mini-phone{
+      @media (max-width:400px){@content};
+    }
+    @if $breakpoint == phone{
+        @media (max-width:600px){@content};
+    }
+    @if $breakpoint == tab-port{
+        @media  (max-width:900px){@content};
+   }
+    @if $breakpoint == tab-land{
+        @media (max-width:1200px){@content};
+    }
+
+    @if $breakpoint == big-desktop{
+        @media (min-width:1800px){@content};
+    }
+}

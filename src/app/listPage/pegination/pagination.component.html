@@ -1,0 +1,8 @@
+<div class='pagination-list'>
+    @for (page of this.getPages(); track page) {
+      <a
+      [class]="currentPage === page ? 'pagination-selectedBtn' : ''"
+      [routerLink]="['/']" [queryParams]="{ page: page }"  queryParamsHandling="merge"
+      >{{ page }}</a>
+    }
+</div>

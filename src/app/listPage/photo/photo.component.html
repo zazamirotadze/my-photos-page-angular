@@ -1,0 +1,12 @@
+<a class='photo' 
+  [routerLink]="['/details']"
+  [queryParams]="{ 
+    id: photo?.id,
+    language: route?.language === 'en' ? 'en' : 'ka'
+    }"
+  >
+    <div>
+      <img [src]="photo?.url" alt="image" />
+    </div>
+    <p>{{ route?.language === 'en'? photo?.name : photo?.nameGeo }}</p>
+</a>
