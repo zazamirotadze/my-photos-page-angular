@@ -2,6 +2,7 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { IMAGE_CONFIG } from '@angular/common';
 import { routes } from './app.routes';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +13,6 @@ export const appConfig: ApplicationConfig = {
       useValue: {
         disableImageSizeWarning: true, 
       }
-    }
+    }, provideClientHydration(withEventReplay())
   ]
 };
