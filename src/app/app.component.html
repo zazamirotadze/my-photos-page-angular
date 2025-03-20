@@ -1,5 +1,9 @@
 <div class="App">
-    <app-nav></app-nav>
-    <router-outlet></router-outlet>
+    @defer {
+        <app-nav></app-nav>
+        <router-outlet></router-outlet>
+      } @placeholder (minimum 1s) {
+        <p>Page Is Loading ...</p>
+      }
 </div>
 
